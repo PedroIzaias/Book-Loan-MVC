@@ -1,13 +1,15 @@
 @model LoansModel
 @{
-    ViewData["Title"] = "Register Loan";
+    ViewData["Title"] = "Edit Loan";
 }
 
 <div class="container bg-dark p-5 rounded-5">
     <div class="mb-5 text-center">
-        <h1 class="text-light">Register Loans</h1>
+        <h1 class="text-light">Edition Loans</h1>
     </div>
-<form method="post" asp-controller="Loan" asp-action="Register">
+
+<form method="post" asp-controller="Loan" asp-action="Edit">
+    <input type="hidden" asp-for=Id>
 
     <div class="mb-3">
         <label for="Receiver" class="form-label text-light">Receiver:</label>
@@ -28,7 +30,7 @@
     </div>
 
     <div class="d-flex gap-5 mt-5">
-        <button type="submit" class="btn btn-success w-50">To add</button>
+        <button type="submit" class="btn btn-success w-50">Edit</button>
         <a class="btn btn-primary w-50" asp-controller="Loan" asp-action="Index">Back</a>
     </div>
 </form>

@@ -1,34 +1,38 @@
 @model LoansModel
 @{
-    ViewData["Title"] = "Register Loan";
+    ViewData["Title"] = "Delete Loan";
 }
 
 <div class="container bg-dark p-5 rounded-5">
     <div class="mb-5 text-center">
-        <h1 class="text-light">Register Loans</h1>
+        <h1 class="text-light">Delete Loans</h1>
     </div>
-<form method="post" asp-controller="Loan" asp-action="Register">
+
+<form method="post" asp-controller="Loan" asp-action="Delete">
+    <input type="hidden" asp-for=Id>
+
+    <h2 class="text-light">Are you sure you want to delete the record?</h2>
 
     <div class="mb-3">
         <label for="Receiver" class="form-label text-light">Receiver:</label>
-        <input type="text" class="form-control" asp-for="Receiver" id="Receiver" placeholder="Who is getting the book?">
+        <input type="text" class="form-control" asp-for="Receiver" id="Receiver" placeholder="Who is getting the book?" disabled>
         <span  class="text-danger" asp-validation-for="Receiver"></span>
     </div>
 
     <div class="mb-3">
         <label for="Provider" class="form-label text-light">Provider:</label>
-        <input type="text" class="form-control" asp-for="Provider" id="Provider" placeholder="Who is lending the book?">
+        <input type="text" class="form-control" asp-for="Provider" id="Provider" placeholder="Who is lending the book?" disabled>
         <span class="text-danger" asp-validation-for="Provider"></span>
     </div>
 
     <div class="mb-3">
         <label for="Book" class="form-label text-light">Book:</label>
-        <input type="text" class="form-control" asp-for="BorrowedBook" id="Book" placeholder="Which book is being borrowed?">
+        <input type="text" class="form-control" asp-for="BorrowedBook" id="Book" placeholder="Which book is being borrowed?" disabled>
         <span class="text-danger" asp-validation-for="BorrowedBook"></span>
     </div>
 
     <div class="d-flex gap-5 mt-5">
-        <button type="submit" class="btn btn-success w-50">To add</button>
+        <button type="submit" class="btn btn-danger w-50">Delete</button>
         <a class="btn btn-primary w-50" asp-controller="Loan" asp-action="Index">Back</a>
     </div>
 </form>

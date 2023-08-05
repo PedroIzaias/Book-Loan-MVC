@@ -13,6 +13,7 @@
       <th scope="col">Provider</th>
       <th scope="col">Book</th>
       <th scope="col">Last Update</th>
+      <th></th>
     </tr>
   </thead>
   <tbody>
@@ -25,6 +26,10 @@
                 <td>@loan.Provider</td>
                 <td>@loan.BorrowedBook</td>
                 <td>@loan.LastUpdateDate</td>
+                <td>
+                  <a asp-controller="Loan" asp-action="Edit" asp-route-id="@loan.Id" class="btn btn-warning mx-2">Edit</a>
+                  <a asp-controller="Loan" asp-action="Delete" asp-route-id="@loan.Id" class="btn btn-danger mx-2">Delete</a>
+                </td>
             </tr>
         }
     }
