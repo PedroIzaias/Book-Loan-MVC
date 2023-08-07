@@ -3,10 +3,17 @@
 <div class="container">
   <div class="d-flex justify-content-between align-itens-center mb-5">
     <h1>Loans</h1>
-    <a class="btn btn-success mx-2" asp-controller="Loan" asp-action="Register">Register new loan</a>
+    <a class="btn btn-success mx-2" asp-controller="Loan" asp-action="Register"><i class="bi bi-file-earmark-plus mx-2"></i>Register new loan</a>
   </div>
 
-<table class="table table-dark table-hover">
+  @if(TempData["SuccessMessage"] != null)
+  {
+      <div class="alert alert-success text-light" role="alert">
+        @TempData["SuccessMessage"]
+      </div>
+  }
+
+<table id="Loans" class="table table-light table-hover mt-5">
   <thead>
     <tr>
       <th scope="col">Receiver</th>
@@ -27,8 +34,8 @@
                 <td>@loan.BorrowedBook</td>
                 <td>@loan.LastUpdateDate</td>
                 <td>
-                  <a asp-controller="Loan" asp-action="Edit" asp-route-id="@loan.Id" class="btn btn-warning mx-2">Edit</a>
-                  <a asp-controller="Loan" asp-action="Delete" asp-route-id="@loan.Id" class="btn btn-danger mx-2">Delete</a>
+                  <a asp-controller="Loan" asp-action="Edit" asp-route-id="@loan.Id" class="btn btn-warning mx-2"><i class="bi bi-pencil-square mx-2"></i>Edit</a>
+                  <a asp-controller="Loan" asp-action="Delete" asp-route-id="@loan.Id" class="btn btn-danger mx-2"><i class="bi bi-trash3-fill mx-2"></i>Delete</a>
                 </td>
             </tr>
         }

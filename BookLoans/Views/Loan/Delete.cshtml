@@ -15,19 +15,19 @@
 
     <div class="mb-3">
         <label for="Receiver" class="form-label text-light">Receiver:</label>
-        <input type="text" class="form-control" asp-for="Receiver" id="Receiver" placeholder="Who is getting the book?" disabled>
+        <input type="text" class="form-control text-light" asp-for="Receiver" id="Receiver" placeholder="Who is getting the book?" disabled>
         <span  class="text-danger" asp-validation-for="Receiver"></span>
     </div>
 
     <div class="mb-3">
         <label for="Provider" class="form-label text-light">Provider:</label>
-        <input type="text" class="form-control" asp-for="Provider" id="Provider" placeholder="Who is lending the book?" disabled>
+        <input type="text" class="form-control text-light" asp-for="Provider" id="Provider" placeholder="Who is lending the book?" disabled>
         <span class="text-danger" asp-validation-for="Provider"></span>
     </div>
 
     <div class="mb-3">
         <label for="Book" class="form-label text-light">Book:</label>
-        <input type="text" class="form-control" asp-for="BorrowedBook" id="Book" placeholder="Which book is being borrowed?" disabled>
+        <input type="text" class="form-control text-light" asp-for="BorrowedBook" id="Book" placeholder="Which book is being borrowed?" disabled>
         <span class="text-danger" asp-validation-for="BorrowedBook"></span>
     </div>
 

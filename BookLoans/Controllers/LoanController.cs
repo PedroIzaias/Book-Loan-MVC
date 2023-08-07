@@ -55,6 +55,8 @@ namespace BookLoans.Controllers
                 _db.Loans.Add(loans);
                 _db.SaveChanges();
 
+                TempData["SuccessMessage"] = "Registration completed successfully!";
+
                 return RedirectToAction("Index");
             }
 
@@ -68,6 +70,8 @@ namespace BookLoans.Controllers
             {
                 _db.Loans.Update(loan);
                 _db.SaveChanges();
+
+                TempData["SuccessMessage"] = "Editing done successfully!";
 
                 return RedirectToAction("Index");
             }
@@ -103,6 +107,8 @@ namespace BookLoans.Controllers
 
             _db.Loans.Remove(loan);
             _db.SaveChanges();
+
+            TempData["SuccessMessage"] = "Deletion successful!";
 
             return RedirectToAction("Index");
         }

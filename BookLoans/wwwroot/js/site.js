@@ -1,4 +1,9 @@
-﻿// Please see documentation at https://docs.microsoft.com/aspnet/core/client-side/bundling-and-minification
-// for details on configuring this project to bundle and minify static web assets.
+﻿$(document).ready(function () {
+    $('#Loans').DataTable();
 
-// Write your JavaScript code.
+    setTimeout(() => { 
+        $(".alert").fadeOut("slow", () => { 
+            $(this).alert('close');
+        })
+    }, 3000)
+});
